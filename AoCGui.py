@@ -14,7 +14,7 @@ class AoCGui:
         self.text_box = scrolledtext.ScrolledText(self.window, width=40, height=10)
         self.part = IntVar()
         self.part.set(1)
-        self.result = scrolledtext.ScrolledText(self.window, width=40, height=2)
+        self.result = scrolledtext.ScrolledText(self.window, width=40, height=10)
 
     def button_pressed(self):
         self.load_text_box_data()
@@ -33,7 +33,7 @@ class AoCGui:
 
     def prepare_gui(self, window_title, button_label, example_data):
         self.window.title(window_title)
-        self.window.geometry("700x400")
+        self.window.geometry("900x600")
 
         self.text_box.insert(INSERT, example_data)
 
@@ -44,8 +44,8 @@ class AoCGui:
 
         self.label.grid(column=0, row=5)
 
-        radio_button_1 = Radiobutton(self.window, text="Part 1", value=1, var=self.part)
-        radio_button_2 = Radiobutton(self.window, text="Part 2", value=2, var=self.part)
+        radio_button_1 = Radiobutton(self.window, text="Part 1", variable=self.part, value=1)
+        radio_button_2 = Radiobutton(self.window, text="Part 2", variable=self.part, value=2)
         radio_button_1.grid(column=0, row=2)
         radio_button_2.grid(column=0, row=3)
 
